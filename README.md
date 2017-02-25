@@ -14,6 +14,8 @@ fig B: Filtered List with matching search results for the search string
 ![Filtered List](./Filtered_list.png "Filtered List")  
 
 # Usage
+In your Activity or Fragment
+
 1. Create an Intent for AddParticipantsActivity Activity (Activity class inside the Favour library)  
 2. To this intent pass absolute HTTP GET urls to GET_POPULAR_ITEMS and FIND_ITEMS WebApi  
     ```java
@@ -30,7 +32,10 @@ fig B: Filtered List with matching search results for the search string
 
     AddPlayersIntent.putExtra("selectableGroupArrayType", (Serializable) continentGroupArrayType);
     ```  
-
+4. Catch the selected the list of items overriding onActivityResult(). And, Use them in your application  
+    ```java
+    List<Country> selectedCountries = (List<Country>) data.getSerializableExtra("result_invitees");
+    ```  
 Final Code as in the example app
 ```java
 public class StartActivity extends AppCompatActivity {
