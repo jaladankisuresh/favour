@@ -32,10 +32,12 @@ In your Activity or Fragment
 
     AddPlayersIntent.putExtra("selectableGroupArrayType", (Serializable) continentGroupArrayType);
     ```  
-4. Catch the selected the list of items overriding onActivityResult(). And, Use them in your application  
+4. Catch the selected the list of items overriding onActivityResult(). And, Use them in your application   
+
     ```java
     List<Country> selectedCountries = (List<Country>) data.getSerializableExtra("result_invitees");
     ```  
+
 Final Code as in the example app
 ```java
 public class StartActivity extends AppCompatActivity {
