@@ -5,7 +5,7 @@ Android AutoCompleteTextViews and MultiAutoCompleteTextViews are counter-initiat
 
 > Popular Items, Sticky Items, Most Used Items, Hot Items or anything else? **Favour** is for you
 
-Note: To test this library end-to-end, you may use Server WebAPI [favour-node](https://github.com/jaladankisuresh/favour-node) whihch is buit using Node.js and Express.
+Note: To test this library end-to-end, you may use Server WebAPI [favour-node](https://github.com/jaladankisuresh/favour-node) which is buit using Node.js and Express.
 
 fig A: Favourite List that is visible by default  
 ![Favourite List](./Favourite_list.png "Favourite List")  
@@ -16,20 +16,20 @@ fig B: Filtered List with matching search results for the search string
 # Usage
 1. Create an Intent for AddParticipantsActivity Activity (Activity class inside the Favour library)  
 2. To this intent pass absolute HTTP GET urls to GET_POPULAR_ITEMS and FIND_ITEMS WebApi  
-```java
-private final String  popularCountriesRequestUrl = "http://[[YOUR_SERVER]]/api/popular-countries";
-private final String findCountriesRequestUrl = "http://[[YOUR_SERVER]]/api/countries-search";
+    ```java
+    private final String  popularCountriesRequestUrl = "http://[[YOUR_SERVER]]/api/popular-countries";
+    private final String findCountriesRequestUrl = "http://[[YOUR_SERVER]]/api/countries-search";
 
-Intent AddPlayersIntent = new Intent(StartActivity.this, AddParticipantsActivity.class);
-AddPlayersIntent.putExtra("getPopularCountries", popularCountriesRequestUrl);
-AddPlayersIntent.putExtra("findCountries", findCountriesRequestUrl);
-```  
+    Intent AddPlayersIntent = new Intent(StartActivity.this, AddParticipantsActivity.class);
+    AddPlayersIntent.putExtra("getPopularCountries", popularCountriesRequestUrl);
+    AddPlayersIntent.putExtra("findCountries", findCountriesRequestUrl);
+    ```  
 3. To this intent pass **Type** of the object to be de-serialized (or in other words response object to Http Get requests)  
-```java
-final Type continentGroupArrayType = new TypeToken<List<ContinentGroup>>(){}.getType();
+    ```java
+    final Type continentGroupArrayType = new TypeToken<List<ContinentGroup>>(){}.getType();
 
-AddPlayersIntent.putExtra("selectableGroupArrayType", (Serializable) continentGroupArrayType);
-```  
+    AddPlayersIntent.putExtra("selectableGroupArrayType", (Serializable) continentGroupArrayType);
+    ```  
 
 Final Code as in the example app
 ```java
